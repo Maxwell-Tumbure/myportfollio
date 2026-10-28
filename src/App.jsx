@@ -3,7 +3,6 @@ import portfolioPortrait from './assets/home-portrait.png';
 import ContactPage from './ContactPage.jsx';
 import {
   Code2,
-  ChevronDown,
   GraduationCap,
   Briefcase,
   MapPin,
@@ -212,7 +211,6 @@ export default function App() {
               {navItems.map((item) => (
                 <button 
                   key={item}
-                  onMouseEnter={() => setActiveMenu(item.toLowerCase())}
                   onClick={
                     item === 'Contact'
                       ? () => navigate('/contact')
@@ -226,9 +224,6 @@ export default function App() {
                   ${activeMenu === item.toLowerCase() ? 'bg-white/10 border-white/10 text-white shadow-inner' : 'border-transparent text-gray-400 hover:text-gray-200'}`}
                 >
                   <span>{item}</span>
-                  {['About', 'Experience', 'Projects'].includes(item) && (
-                    <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === item.toLowerCase() ? 'rotate-180 text-white' : 'text-gray-500'}`} />
-                  )}
                 </button>
               ))}
             </div>
