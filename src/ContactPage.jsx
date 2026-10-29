@@ -91,7 +91,7 @@ export default function ContactPage({ onHome, embedded = false }) {
   }, []);
 
   return (
-    <div className={`${embedded ? 'border-t border-white/10' : 'min-h-screen'} overflow-x-hidden bg-black text-white selection:bg-blue-500/30 selection:text-white`}>
+    <div id={embedded ? 'contact-section' : undefined} className={`${embedded ? 'scroll-mt-24 border-t border-white/10' : 'min-h-screen'} overflow-x-hidden bg-black text-white selection:bg-blue-500/30 selection:text-white`}>
       {!embedded && (
         <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6">
           <a

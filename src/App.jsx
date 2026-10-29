@@ -6,12 +6,9 @@ import {
   GraduationCap,
   Briefcase,
   MapPin,
-  FileText,
   Mail,
   Menu,
   X,
-  ExternalLink,
-  Globe,
 } from 'lucide-react';
 
 const XLogo = ({ size = 20, className = "" }) => (
@@ -99,7 +96,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [page, setPage] = useState(window.location.pathname.startsWith('/contact') ? 'contact' : 'home');
 
-  const navItems = ['About', 'Experience', 'Projects', 'Contact'];
+  const navItems = ['Home', 'About', 'Experience', 'Contact'];
 
   useEffect(() => {
     const handlePopState = () => {
@@ -213,9 +210,11 @@ export default function App() {
                   key={item}
                   onClick={
                     item === 'Contact'
-                      ? () => navigate('/contact')
-                      : item === 'About'
-                        ? () => navigateToSection('about')
+                      ? () => navigateToSection('contact-section')
+                      : item === 'Home'
+                        ? () => navigateToSection('home-section')
+                        : item === 'About'
+                          ? () => navigateToSection('about-section')
                         : item === 'Experience'
                           ? () => navigateToSection('experience')
                           : undefined
@@ -297,41 +296,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Projects Panel */}
-              <div className={`absolute inset-0 p-6 transition-all duration-500 ${activeMenu === 'projects' ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
-                <div className="flex h-full grid-cols-2 gap-6">
-                  <div className="flex-1 group bg-gradient-to-br from-[#1a1a2e] to-[#11111a] border border-blue-900/30 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-500/50 transition-colors cursor-pointer shadow-lg">
-                    <div>
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="bg-blue-500/20 p-2 rounded-lg"><Globe className="text-blue-400" size={20} /></div>
-                        <ExternalLink size={16} className="text-gray-500 group-hover:text-white transition-colors" />
-                      </div>
-                      <h3 className="text-base font-bold text-white mb-2">Victoria Falls Explorer</h3>
-                      <p className="text-[13px] text-gray-400 leading-relaxed">
-                        A modern tourism marketing web application featuring interactive activity listings, high-altitude adventure bookings, and safari showcases.
-                      </p>
-                    </div>
-                    <div className="mt-4 flex space-x-2">
-                      <span className="px-2 py-0.5 rounded bg-black/50 text-[10px] text-gray-300 font-mono border border-white/5">Next.js</span>
-                      <span className="px-2 py-0.5 rounded bg-black/50 text-[10px] text-gray-300 font-mono border border-white/5">React</span>
-                      <span className="px-2 py-0.5 rounded bg-black/50 text-[10px] text-gray-300 font-mono border border-white/5">Vercel</span>
-                    </div>
-                  </div>
-
-                  <div className="flex-1 group bg-white/[0.03] border border-white/5 rounded-2xl p-5 flex flex-col justify-between hover:bg-white/[0.06] transition-colors cursor-pointer">
-                    <div>
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="bg-white/10 p-2 rounded-lg"><FileText className="text-gray-300" size={20} /></div>
-                      </div>
-                      <h3 className="text-base font-bold text-white mb-2">Industrial Attachment Report</h3>
-                      <p className="text-[13px] text-gray-400 leading-relaxed">
-                        Comprehensive academic documentation detailing applied computer science methodologies and real-world system implementations.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* Contact Panel */}
               <div className={`absolute inset-0 p-6 transition-all duration-500 ${activeMenu === 'contact' ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
                  <div className="w-full h-full flex flex-col items-center justify-center text-center space-y-6">
@@ -373,24 +337,20 @@ export default function App() {
 
       {mobileMenuOpen && (
         <div className="md:hidden fixed top-24 left-4 right-4 z-40 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-2xl py-4 px-6 flex flex-col space-y-4 animate-[fadeIn_0.2s_ease-out_both] shadow-2xl">
-          {navItems.map(item => item === 'Contact' ? (
-            <a key={item} href="/contact" onClick={(event) => {
-              event.preventDefault();
-              navigate('/contact');
-            }} className="text-gray-300 hover:text-white font-medium">
-              {item}
-            </a>
-          ) : (
+          {navItems.map(item => (
             <a
               key={item}
-              href={item === 'About' ? '#about' : item === 'Experience' ? '#experience' : `#${item.toLowerCase()}`}
+              href={item === 'Home' ? '#home-section' : item === 'About' ? '#about-section' : item === 'Experience' ? '#experience' : '#contact-section'}
               onClick={(event) => {
-                if (item === 'About' || item === 'Experience') {
-                  event.preventDefault();
-                  navigateToSection(item === 'About' ? 'about' : 'experience');
-                  return;
-                }
-                setMobileMenuOpen(false);
+                event.preventDefault();
+                const sectionId = item === 'Home'
+                  ? 'home-section'
+                  : item === 'About'
+                    ? 'about-section'
+                  : item === 'Experience'
+                    ? 'experience'
+                    : 'contact-section';
+                navigateToSection(sectionId);
               }}
               className="text-gray-300 hover:text-white font-medium"
             >
@@ -400,7 +360,7 @@ export default function App() {
         </div>
       )}
 
-      <main id="about" className="scroll-mt-24 relative z-10 pt-32 pb-16 lg:pt-48 lg:pb-32">
+      <main id="home-section" className="scroll-mt-24 relative z-10 pt-32 pb-16 lg:pt-48 lg:pb-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             
@@ -529,6 +489,22 @@ export default function App() {
           </div>
         </div>
       </main>
+
+      <section id="about-section" className="scroll-mt-24 border-t border-white/10 bg-[#080808] py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
+            <p className="mb-4 font-mono text-xs font-semibold tracking-[0.24em] text-[#50d5c6]">A LITTLE ABOUT ME</p>
+            <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-5xl">About Me</h2>
+            <div className="mb-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#50d5c6] to-blue-500" />
+            <p className="text-base leading-relaxed text-gray-300 sm:text-lg">
+              I’m a Certified Software Engineer from Harare, Zimbabwe, and a Computer Science Graduate from Bindura University of Science Education. I enjoy building useful things for the web, especially websites and web applications, and keep learning new tools and techniques as I go.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-gray-400 sm:text-lg">
+              My experience includes supporting business systems and IT infrastructure at African Sun Limited, including Elephant Hills Resort and Hwange Safari Lodge. I’m interested in creating practical, reliable software and continuing to grow as an engineer.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Parallax Window Divider */}
       <div 
