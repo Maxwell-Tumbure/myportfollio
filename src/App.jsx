@@ -96,7 +96,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [page, setPage] = useState(window.location.pathname.startsWith('/contact') ? 'contact' : 'home');
 
-  const navItems = ['Home', 'About', 'Experience', 'Contact'];
+  const navItems = ['Home', 'Experience', 'About', 'Contact'];
 
   useEffect(() => {
     const handlePopState = () => {
