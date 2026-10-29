@@ -490,22 +490,6 @@ export default function App() {
         </div>
       </main>
 
-      <section id="about-section" className="scroll-mt-24 border-t border-white/10 bg-[#080808] py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-3xl">
-            <p className="mb-4 font-mono text-xs font-semibold tracking-[0.24em] text-[#50d5c6]">A LITTLE ABOUT ME</p>
-            <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-5xl">About Me</h2>
-            <div className="mb-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#50d5c6] to-blue-500" />
-            <p className="text-base leading-relaxed text-gray-300 sm:text-lg">
-              I’m a Certified Software Engineer from Harare, Zimbabwe, and a Computer Science Graduate from Bindura University of Science Education. I enjoy building useful things for the web, especially websites and web applications, and keep learning new tools and techniques as I go.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-gray-400 sm:text-lg">
-              My experience includes supporting business systems and IT infrastructure at African Sun Limited, including Elephant Hills Resort and Hwange Safari Lodge. I’m interested in creating practical, reliable software and continuing to grow as an engineer.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Parallax Window Divider */}
       <div 
         className="w-full h-32 md:h-48 bg-fixed bg-center bg-cover bg-no-repeat relative border-y border-[#262626] shadow-[inset_0_0_100px_rgba(0,0,0,0.8)]"
@@ -560,6 +544,31 @@ export default function App() {
                 </div>
               </RevealOnScroll>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <div
+        className="relative h-32 w-full border-y border-[#262626] bg-fixed bg-cover bg-center bg-no-repeat shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] md:h-48"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')"
+        }}
+      >
+        <div className="absolute inset-0 bg-[#050505]/60 backdrop-brightness-75" />
+      </div>
+
+      <section id="about-section" className="scroll-mt-24 border-t border-white/10 bg-[#080808] py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
+            <p className="mb-4 font-mono text-xs font-semibold tracking-[0.24em] text-[#50d5c6]">A LITTLE ABOUT ME</p>
+            <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-5xl">About Me</h2>
+            <div className="mb-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#50d5c6] to-blue-500" />
+            <p className="text-base leading-relaxed text-gray-300 sm:text-lg">
+              I’m a Certified Software Engineer from Harare, Zimbabwe, and a Computer Science Graduate from Bindura University of Science Education. I enjoy building useful things for the web, especially websites and web applications, and keep learning new tools and techniques as I go.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-gray-400 sm:text-lg">
+              My experience includes supporting business systems and IT infrastructure at African Sun Limited, including Elephant Hills Resort and Hwange Safari Lodge. I’m interested in creating practical, reliable software and continuing to grow as an engineer.
+            </p>
           </div>
         </div>
       </section>

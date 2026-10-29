@@ -118,6 +118,17 @@ export default function ContactPage({ onHome, embedded = false }) {
         </header>
       )}
 
+      {!embedded && (
+        <div
+          className="relative h-32 w-full border-y border-[#262626] bg-fixed bg-cover bg-center bg-no-repeat shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] md:h-48"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')"
+          }}
+        >
+          <div className="absolute inset-0 bg-[#050505]/60 backdrop-brightness-75" />
+        </div>
+      )}
+
       <main className="mx-auto max-w-7xl px-6 pb-20 pt-10 sm:pb-28 sm:pt-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div className="lg:order-2">
