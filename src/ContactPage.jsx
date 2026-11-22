@@ -4,6 +4,24 @@ import portrait from './assets/designer-developer-portrait.png';
 
 const currentYear = new Date().getFullYear();
 
+const GithubIcon = () => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+    <path d="M12 .297a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58l-.01-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.23 1.84 1.23 1.07 1.84 2.8 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.22.69.82.57A12 12 0 0 0 12 .297z" />
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+    <path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.2v3.2H10V21h3.4z" />
+  </svg>
+);
+
+const TikTokIcon = () => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+    <path d="M19.6 7.1a7.3 7.3 0 0 1-4.5-1.5v8.1a6.1 6.1 0 1 1-5.3-6.1v3.2a2.9 2.9 0 1 0 2.1 2.8V2h3.2c.2 2 1.5 3.6 3.4 4.2.4.1.8.2 1.2.2v3.2a8 8 0 0 1-1.1-.1 10 10 0 0 1-1-.3z" />
+  </svg>
+);
+
 const XIcon = () => (
   <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -32,9 +50,12 @@ const WhatsAppIcon = () => (
 );
 
 const socialLinks = [
-  { label: 'X', href: 'https://x.com/mtumbure?s=11', icon: <XIcon />, color: 'hover:border-white/30 hover:text-white' },
+  { label: 'GitHub', href: 'https://github.com/Maxwell-Tumbure', icon: <GithubIcon />, color: 'hover:border-white/30 hover:text-white' },
+  { label: 'X', href: 'https://x.com/mtumbure', icon: <XIcon />, color: 'hover:border-white/30 hover:text-white' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/maxwell-tumbure-02939a343', icon: <LinkedInIcon />, color: 'hover:border-sky-400/40 hover:text-sky-300' },
-  { label: 'Instagram', href: 'https://www.instagram.com/munyaradzi__zw?exln=MXNmeTR6M2ppYXV0dw%3D%3D&utm_source=qr', icon: <InstagramIcon />, color: 'hover:border-pink-400/40 hover:text-pink-300' },
+  { label: 'Instagram', href: 'https://www.instagram.com/munyaradzi__zw', icon: <InstagramIcon />, color: 'hover:border-pink-400/40 hover:text-pink-300' },
+  { label: 'Facebook', href: 'https://www.facebook.com/maxwell.tumbure/', icon: <FacebookIcon />, color: 'hover:border-blue-400/40 hover:text-blue-300' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@munyaradzi_zw', icon: <TikTokIcon />, color: 'hover:border-white/30 hover:text-white' },
   { label: 'WhatsApp', href: 'https://wa.me/263774198648', icon: <WhatsAppIcon />, color: 'hover:border-emerald-400/40 hover:text-emerald-300' },
 ];
 

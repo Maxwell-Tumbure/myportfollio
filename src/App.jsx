@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import portfolioPortrait from './assets/home-portrait.png';
 import ContactPage from './ContactPage.jsx';
 import {
   Code2,
@@ -10,6 +9,8 @@ import {
   Menu,
   X,
 } from 'lucide-react';
+
+const portfolioPortrait = '/emjay-maxwell-tumbure.jpg';
 
 const XLogo = ({ size = 20, className = "" }) => (
   <svg
@@ -372,14 +373,15 @@ export default function App() {
               </div>
               
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 opacity-0 animate-fade-in-up delay-100">
-                Hie I'm <br />
+                Hie, I'm <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-600">
-                  emjay
+                  Emjay
                 </span>
+                <span className="mt-2 block text-2xl font-semibold text-gray-300 sm:text-3xl">Maxwell Tumbure</span>
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-400 mb-10 max-w-xl leading-relaxed opacity-0 animate-fade-in-up delay-200">
-                I'm a Certified Software Engineer from Harare, Zimbabwe. I enjoy building things that live on the internet, from websites to web apps. I am currently better at the first one, but I'm always learning.
+                I'm Emjay (Maxwell Tumbure), a certified software engineer in Harare, Zimbabwe. I build responsive websites and web applications and keep learning new tools and techniques.
               </p>
               
               <div className="flex flex-wrap items-center gap-3 opacity-0 animate-fade-in-up delay-300" aria-label="Social profiles">
@@ -402,7 +404,7 @@ export default function App() {
                   <XLogo size={22} />
                 </a>
                 <a
-                  href="https://www.instagram.com/munyaradzi__zw?exln=MXNmeTR6M2ppYXV0dw%3D%3D&utm_source=qr"
+                  href="https://www.instagram.com/munyaradzi__zw"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -461,7 +463,7 @@ export default function App() {
               <div className="relative mx-auto w-full max-w-[540px] overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.55)]">
                 <img
                   src={portfolioPortrait}
-                  alt="Designer and software engineer portrait with Zimbabwe flag colors"
+                  alt="Emjay - Maxwell Tumbure Software Engineer Zimbabwe"
                   className="block h-auto w-full"
                 />
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -598,7 +600,7 @@ export default function App() {
           <div className="flex space-x-6 mt-4 md:mt-0 text-gray-500">
             <a href="https://github.com/Maxwell-Tumbure" target="_blank" rel="noreferrer" className="hover:text-white transition-colors hover:scale-110 transform flex items-center justify-center"><WigglingGithubIcon size={20} /></a>
             <a href="https://www.linkedin.com/in/maxwell-tumbure-02939a343" target="_blank" rel="noreferrer" className="hover:text-white transition-colors hover:scale-110 transform"><LinkedInIcon size={20} /></a>
-            <a href="#" className="hover:text-white transition-colors hover:scale-110 transform"><XLogo size={18} /></a>
+            <a href="https://x.com/mtumbure" target="_blank" rel="noreferrer" aria-label="X" className="hover:text-white transition-colors hover:scale-110 transform"><XLogo size={18} /></a>
           </div>
         </div>
       </footer>
