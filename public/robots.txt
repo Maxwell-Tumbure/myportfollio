@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emjay.co.zw/sitemap.xml
